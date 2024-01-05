@@ -7,7 +7,7 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
 - Todo
   - Update to lates version of Photic (1st Priority)
   - Unified code of Main and Auxiliary Computer to run on 1 teensy 4.1
-  - Add support for AltIMU-10 v6 Gyro, Accelerometer, Compass, and Altimeter (LSM6DSO, LIS3MDL, and LPS22DF Carrier)
+  - (1st alpha commit done) Add support for AltIMU-10 v6 Gyro, Accelerometer, Compass, and Altimeter (LSM6DSO, LIS3MDL, and LPS22DF Carrier)
   - Add support for more GPS (ATGM336H-5N31, Adafruit Ultimate GPS, NMEA)
   - Add config file for Hardware available (select hardware to use)
   - Maybe add a Web page to see the rocket status

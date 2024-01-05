@@ -22,6 +22,22 @@
 
 #include "sac2020_state.h"
 
+// Magnotomitor
+// min: { -3347,  -5192,  -4355}   max: { +3467,  +2301,  +3515}
+#define MAG0MAX 3467
+#define MAG0MIN -3347
+
+#define MAG1MAX 2301
+#define MAG1MIN -5192
+
+#define MAG2MAX 3515
+#define MAG2MIN -4355
+
+//float magOffset[3] = { (MAG0MAX + MAG0MIN) / 2, (MAG1MAX + MAG1MIN) / 2, (MAG2MAX + MAG2MIN) / 2 };
+//double magGain[3];
+
+
+
 #ifndef FF
     /**
      * Whether or not computer is being tested on the ground, inert, outside

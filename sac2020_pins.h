@@ -59,7 +59,7 @@
 
 
 /**
- * Bluetooth module.
+ * Bluetooth module. Used on Launch pas for Diagnostic and Status display
  */
 #define PIN_BLE_RTS 6
 #define PIN_BLE_CTS 14
@@ -67,7 +67,7 @@
 #define PIN_BLE_DFU 23
 
 /**
- * WIFI module.
+ * WIFI module. Used on Launch pas for Diagnostic and Status display
  */
 #define PIN_WIFI_RXD 28   //RX7
 #define PIN_WIFI_TXD 29   //TX7
@@ -96,7 +96,7 @@
 #define PIN_RFM_ENABLE  4    
 #define PIN_RFM_RESET   5    //RESET
 #define PIN_RFM_INTR    16   //GPIO0
-#define PIN_RFM_CHIPSEL 20
+#define PIN_RFM_CHIPSEL 20   //
 
 
 

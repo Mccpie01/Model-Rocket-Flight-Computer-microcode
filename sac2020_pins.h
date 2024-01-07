@@ -35,7 +35,7 @@
 #define PIN_SERVO6_PWM 7
 #define PIN_SERVO7_PWM 2
 #define PIN_SERVO8_PWM 25
-// to controle a Drone Speed and +
+// to controle a Drone Speed and or EDF rocket
 #define PIN_SERVO9_PWM 31  //IN1
 #define PIN_SERVO10_PWM 40 //IN2
 #define PIN_SERVO11_PWM 41 //IN3

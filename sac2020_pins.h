@@ -24,10 +24,24 @@
 #define PIN_BNO055_INTR  16
 
 /**
- * Canard fin servos.
+ * Servos for Canard fin, Parachute Deployment and Other device
+
  */
-#define PIN_SERVO1_PWM 4
+#define PIN_SERVO1_PWM 8
 #define PIN_SERVO2_PWM 5
+#define PIN_SERVO3_PWM 4
+#define PIN_SERVO4_PWM 3
+#define PIN_SERVO5_PWM 6
+#define PIN_SERVO6_PWM 7
+#define PIN_SERVO7_PWM 2
+#define PIN_SERVO8_PWM 25
+// to controle a Drone Speed and +
+#define PIN_SERVO9_PWM 31  //IN1
+#define PIN_SERVO10_PWM 40 //IN2
+#define PIN_SERVO11_PWM 41 //IN3
+#define PIN_SERVO12_PWM 5  //ESC
+
+
 
 /**
  * Fault LEDs.
@@ -53,12 +67,23 @@
 #define PIN_BLE_DFU 23
 
 /**
+ * WIFI module.
+ */
+#define PIN_WIFI_RXD 28   //RX7
+#define PIN_WIFI_TXD 29   //TX7
+
+
+/**
  * Continuity checking.
  */
-#define PIN_CONT_ENABLE    6
-#define PIN_CONT_POWER     13
-#define PIN_CONT_PYRO1_CHK 22
-#define PIN_CONT_PYRO2_CHK 23
+#define PIN_CONT_ENABLE    24    //TESTONINPUT
+#define PIN_CONT_POWER     -1
+#define PIN_CONT_PYRO1_CHK 15   //ReadTESTPyro1
+#define PIN_CONT_PYRO2_CHK 16   //ReadTESTPyro2
+#define PIN_CONT_PYRO3_CHK 17   //ReadTESTPyro3
+#define PIN_CONT_PYRO4_CHK 20   //ReadTESTPyro4
+#define PIN_CONT_PYRO5_CHK 21   //ReadTESTPyro5
+#define PIN_CONT_PYRO6_CHK 22   //ReadTESTPyro5
 
 /**
  * GPS.
@@ -66,11 +91,11 @@
 #define PIN_GPS_FIX 3 // High when GPS lock is held.
 
 /**
- * RF module.
+ * RF module Lora 915MHZ
  */
-#define PIN_RFM_ENABLE  4
-#define PIN_RFM_RESET   5
-#define PIN_RFM_INTR    16
+#define PIN_RFM_ENABLE  4    
+#define PIN_RFM_RESET   5    //RESET
+#define PIN_RFM_INTR    16   //GPIO0
 #define PIN_RFM_CHIPSEL 20
 
 

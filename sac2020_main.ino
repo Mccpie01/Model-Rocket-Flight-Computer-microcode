@@ -155,6 +155,14 @@ photic::Barometer* g_baro;
 #ifndef FF
     Servo g_servo1;
     Servo g_servo2;
+    Servo g_servo3;
+    Servo g_servo4;
+    Servo g_servo5;
+    Servo g_servo6;
+    Servo g_servo7;
+    Servo g_servo8;
+    Servo g_servo9;
+    Servo g_servo10;
     Adafruit_BluefruitLE_UART g_ble(Serial3, PIN_BLE_MOD, PIN_BLE_CTS,
                                     PIN_BLE_RTS);
 #endif
@@ -167,7 +175,11 @@ Status_t g_imu_status   = Status_t::OFFLINE; // BNO055 IMU.
 Status_t g_ble_status   = Status_t::OFFLINE; // Bluetooth module.
 Status_t g_pyro1_status = Status_t::OFFLINE; // Pyro 1.
 Status_t g_pyro2_status = Status_t::OFFLINE; // Pyro 2.
-Status_t g_fnw_status   = Status_t::OFFLINE; // Flight computer network.
+Status_t g_pyro3_status = Status_t::OFFLINE; // Pyro 3.
+Status_t g_pyro4_status = Status_t::OFFLINE; // Pyro 4.
+Status_t g_pyro5_status = Status_t::OFFLINE; // Pyro 5.
+Status_t g_pyro6_status = Status_t::OFFLINE; // Pyro 6.
+//Status_t g_fnw_status   = Status_t::OFFLINE; // Flight computer network.
 
 /**
  * Kalman filter for state estimation and metronome controlling its frequency.
@@ -378,8 +390,12 @@ void init_imu()
     // Pins used to convey calibration events.
     const std::vector<uint8_t> calib_pins =
     {
-        PIN_LED_PYRO1_FAULT, // IMU system.
-        PIN_LED_PYRO2_FAULT, // Gyroscope.
+        PIN_LED_PYRO1_FAULT, // Pyro1
+        PIN_LED_PYRO2_FAULT, // Ptro2
+        PIN_LED_PYRO3_FAULT, // Pyro3
+        PIN_LED_PYRO4_FAULT, // Pyro4
+        PIN_LED_PYRO5_FAULT, // Pyro5
+        PIN_LED_PYRO6_FAULT, // Pyro6
         PIN_LED_BLE_FAULT,   // Accelerometer.
         PIN_LED_FNW_FAULT    // Magnetometer.
     };
@@ -464,6 +480,14 @@ void init_servos()
 #ifndef FF
     g_servo1.attach(PIN_SERVO1_PWM);
     g_servo2.attach(PIN_SERVO2_PWM);
+    g_servo3.attach(PIN_SERVO3_PWM);
+    g_servo4.attach(PIN_SERVO4_PWM);
+    g_servo5.attach(PIN_SERVO5_PWM);
+    g_servo6.attach(PIN_SERVO6_PWM);
+    g_servo7.attach(PIN_SERVO7_PWM);
+    g_servo8.attach(PIN_SERVO8_PWM);
+    g_servo9.attach(PIN_SERVO9_PWM);
+    g_servo10.attach(PIN_SERVO10_PWM);
 #endif
 }
 
@@ -503,6 +527,10 @@ void init_pyros()
 {
     g_ledc->flash(PIN_LED_PYRO1_FAULT);
     g_ledc->flash(PIN_LED_PYRO2_FAULT);
+    g_ledc->flash(PIN_LED_PYRO3_FAULT);
+    g_ledc->flash(PIN_LED_PYRO4_FAULT);
+    g_ledc->flash(PIN_LED_PYRO5_FAULT);
+    g_ledc->flash(PIN_LED_PYRO6_FAULT);
 }
 
 /**
@@ -612,6 +640,10 @@ void setup()
                                 PIN_LED_BLE_FAULT,
                                 PIN_LED_PYRO1_FAULT,
                                 PIN_LED_PYRO2_FAULT,
+                                PIN_LED_PYRO3_FAULT,
+                                PIN_LED_PYRO4_FAULT,
+                                PIN_LED_PYRO5_FAULT,
+                                PIN_LED_PYRO6_FAULT,
                                 PIN_LED_FNW_FAULT,
                                 PIN_LED_BARO_FAULT});
 
@@ -689,7 +721,11 @@ void setup()
     bool ok = g_baro_status  == Status_t::ONLINE &&
               g_imu_status   == Status_t::ONLINE &&
               g_pyro1_status == Status_t::ONLINE &&
-              g_pyro2_status == Status_t::ONLINE;
+              g_pyro2_status == Status_t::ONLINE &&
+              g_pyro3_status == Status_t::ONLINE &&
+              g_pyro4_status == Status_t::ONLINE &&
+              g_pyro5_status == Status_t::ONLINE &&
+              g_pyro6_status == Status_t::ONLINE;
     if (!ok)
     {
         g_ledc->flash(PIN_LED_SYS_FAULT);

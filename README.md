@@ -18,8 +18,6 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
   - Add support for the UNC RC 1.1 Flight computer (or Newer)
   - Add a Deploy Package ( Future Project to deploy an edf rocket in the form of a MARS or MOON Lander)
   - Update Data logger to support 50000 transactions per sec
-  - Add support for 6 Pyros
-  - Add support for 12 Servos
   - Add support for Battery voltage test
   - Add support for the main Arming Security Switch
   - Add support for Pyro Arming Security Switch in series with Main Arming

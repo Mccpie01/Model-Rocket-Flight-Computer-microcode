@@ -22,6 +22,11 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
   - Add support for the main Arming Security Switch
   - Add support for Pyro Arming Security Switch in series with Main Arming
   - Add support for Continuity testing with 3 states ( Fault No Pyro, Good Pyro Available, Shorted )
+<<<<<<< HEAD
+  - A file base configuration
+  - Validation of Hardwere configuration 
+  - Option to same log in flight to flash and copy to SD  when landed or only SD
+=======
   - A file base configuration (PIN definition, Module on or off, Bench test mode, or Flight mode)
   - Option to save logs in flight to flash and then copy to SD  when landed or only to SD
   - Smaller Microcode footprint
@@ -29,7 +34,11 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
   - Add an error logging to a file with detailed info(option on or off)
   - Add a descriptive header to each function/Procedure with a description of what it does. Detailed detail on the variable, the Version number of the function/Procedure
   - each procedure must return a status and or error code with details of the problem
+>>>>>>> 61ee29794a19279d170c4faeed8e506ce71b5626
   - add an option to display the rocket status on the launchpad and after a flight on the I2C Oled screen 
+  - find and cleanup bottleneck
+  
+
 
 > To boldly go where no Model Rocket has gone before?
 
@@ -40,14 +49,19 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
 **Main Computer**
 
 * Teensy 4.1
-* Tracks vehicle state with BNO055 IMU and BMP085 barometer
+* Tracks vehicle state with BNO055 IMU and BMP085 barometer or Altimu10-v6 
 * Deploys forward canards
 * Fires recovery pyros
-* Sends periodic telemetry packets to an auxiliary computer
 * Operates GPS
+<<<<<<< HEAD
+* Operates RadioHead RF95 module communicating with the ground station
+* Stores telemetry on the onboard SD card and in flash
+
+=======
 * Operates Radiohead RF95 module communicating with the ground station
 * Stores telemetry on the onboard SD card
 * Send telemetry to the base station with Lora
+>>>>>>> 61ee29794a19279d170c4faeed8e506ce71b5626
   
 
 ## Arduino Dependencies
@@ -57,6 +71,6 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
 * [Adafruit GPS driver](https://github.com/adafruit/Adafruit_GPS)
 * [Adafruit Unified Sensor driver](https://github.com/adafruit/Adafruit_Sensor)
 * TinyGPS++ libs
-* LSM6DSO(LSM6), LIS3MDL, and LPS22DF(LPS) libs
+* LSM6DSO(LSM6), LIS3MDL, and LPS22DF(LPS) Drivers for Pololu ALTIMU-10 v6 (https://www.pololu.com/product/2863)
 * sac2020_lib (included in the repository)
 * [Photic](https://github.com/longhorn-rocketry/photic)

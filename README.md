@@ -22,8 +22,13 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
   - Add support for the main Arming Security Switch
   - Add support for Pyro Arming Security Switch in series with Main Arming
   - Add support for Continuity testing with 3 states ( Fault No Pyro, Good Pyro Available, Shorted )
-  - A file base configuration
-  - Option to same log in flight to flash and copy to SD  when landed or only SD
+  - A file base configuration (PIN definition, Module on or off, Bench test mode, or Flight mode)
+  - Option to save logs in flight to flash and then copy to SD  when landed or only to SD
+  - Smaller Microcode footprint
+  - Add fault tolerance
+  - Add an error logging to a file with detailed info(option on or off)
+  - Add a descriptive header to each function/Procedure with a description of what it does. Detailed detail on the variable, the Version number of the function/Procedure
+  - each procedure must return a status and or error code with details of the problem
   - add an option to display the rocket status on the launchpad and after a flight on the I2C Oled screen 
 
 > To boldly go where no Model Rocket has gone before?
@@ -40,7 +45,7 @@ Based on Longhorn-rocketry / sac2020-fsw, An updated version to fit with the UNC
 * Fires recovery pyros
 * Sends periodic telemetry packets to an auxiliary computer
 * Operates GPS
-* Operates RadioHead RF95 module communicating with the ground station
+* Operates Radiohead RF95 module communicating with the ground station
 * Stores telemetry on the onboard SD card
 * Send telemetry to the base station with Lora
   
